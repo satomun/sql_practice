@@ -7,7 +7,7 @@ conn=sqlite3.connect("practice.db")
 c=conn.cursor()
 
 def table_init1():
-    c.execute('drop table 社員')
+    # c.execute('drop table 社員')
     c.execute('CREATE TABLE  IF NOT EXISTS 社員(社員コード text,氏名 text,性別  text,生年月日 date,部署 text, 入社年月日 date,上司コード text, PRIMARY KEY(社員コード))')
     sql1  = 'insert into 社員(社員コード,氏名,性別,生年月日,部署,入社年月日,上司コード) values (?,?,?,?,?,?,?)'
     data1 = [
@@ -21,7 +21,7 @@ def table_init1():
     conn.commit()
 
 def table_init2():
-    c.execute('drop table 資格')
+    # c.execute('drop table 資格')
     c.execute('CREATE TABLE  IF NOT EXISTS 資格(社員コード text,保有資格 text,取得日 date,PRIMARY KEY(社員コード,保有資格))')
     sql2 = 'insert into 資格(社員コード,保有資格,取得日) values (?,?,?)'
     data2 = [
