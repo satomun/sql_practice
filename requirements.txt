@@ -1,3 +1,2 @@
 streamlit
 pandas
-sqlite3==21.1.1
